@@ -1,0 +1,63 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px,
+  columns: 12,
+  gutters: 0.5,
+  gutter-position: inside,
+  global-box-sizing: border-box,
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+// Susy Layouts
+// ------------
+// NOTE: Gutter-position: inside is used because we have to use a margin-left: -4px to combat whitespace between inline block elements. 
+
+.wrap {
+  @include container;
+}
+
+// Float Center
+.gallery {
+  @include cf;
+  text-align: center;
+}
+
+.gallery__item {
+  display: inline-block;
+  // We use the span function because we only need the width. 
+  width: span(3);
+  // Gutter is split into two, requires 2x gutter to produce same vertical gutter spacing.
+  margin-top: gutter() * 2;
+  // margin-left to combat whitespace by inline-block elements. 
+  margin-left: -4px;
+  padding-left: gutter();
+  padding-right: gutter();
+}
+
+.gallery__item:nth-child(-n+4) {
+  margin-top: 0;
+}
+
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.gallery__item {
+  &:nth-child(odd) {
+    background: color(shamrock);
+  }
+  &:nth-child(even) {
+    background: color(jungle-green);
+  }
+}
+
+.gallery__inner-content {
+  background: color(tango);
+  height: 0; 
+  padding-bottom: 100%;
+}

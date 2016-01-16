@@ -1,0 +1,33 @@
+@import "scaffold";
+@import "demo";
+
+$susy: (
+  columns: 6, 
+  gutters: 0.25, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+.wrap {
+  @include container;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  min-width: 960px;
+  max-width: 960px;
+}
+
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.wrap {
+  height: 6rem;
+}
+
+.wrap-nobg {
+  height: auto;
+}

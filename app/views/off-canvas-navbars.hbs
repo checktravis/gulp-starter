@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Susy Templates - Off Canvas Nav Bars</title>
+  <!-- build:css css/off-canvas-navbars.min.css -->
+  <link rel="stylesheet" href="css/off-canvas-navbars.css">
+  <!-- endbuild -->
+
+  <!--build:headjs js/head.min.js -->
+
+  <!--endbuild -->
+</head>
+
+<body class="off-canvas-navbars">
+  <div class="c-canvas jsOffCanvasContainer">
+    <div class="c-canvas__off-canvas-container jsOffCanvasContent">
+      <nav class="c-canvas__off-canvas-nav">
+        <a href="#">Nav Item</a>
+        <a href="#">Nav Item</a>
+        <a href="#">Nav Item</a>
+        <a href="#">Nav Item</a>
+        <a href="#">Nav Item</a>
+      </nav>
+    </div>
+
+    <div class="c-canvas__on-canvas-container">
+      <header class="l-site-header">
+        <div class="wrap">
+          <div class="c-header-nav__toggle jsOffCanvasToggle">Menu</div>
+          <nav class="c-header-nav">
+            <a href="#">Nav Item</a>
+            <a href="#">Nav Item</a>
+            <a href="#">Nav Item</a>
+            <a href="#">Nav Item</a>
+            <a href="#">Nav Item</a>
+          </nav>
+        </div>
+      </header>
+
+      <div class="l-site-inner">
+        <div class="wrap-nobg">
+          <div class="l-content">
+            <div class="center">
+              <h2>Off Canvas Navbars</h2>
+              <p>The Off canvas layout is a popular design pattern and has mainly a lot navigational purposes. This is especially so on a mobile screen where there is limited visual real estate.</p>
+              
+              <p>The off-canvas navigation is only shown in this example when the viewport is below 960px. The standard navigation is also replaced with the menu toggle when that happens. </p>
+
+              <p>Note that this example <strong>does not use Susy</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> foot}}

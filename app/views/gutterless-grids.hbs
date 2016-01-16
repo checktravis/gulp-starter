@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Susy Templates - Gutterless Grids</title>
+  <!-- build:css css/gutterless-grids.min.css -->
+  <link rel="stylesheet" href="css/gutterless-grids.css">
+  <!-- endbuild -->
+
+  <!--build:headjs js/head.min.js -->
+  {{!-- New modernizr is built whenever a new test case is added. Integrates with Usemin for building into head.min.js --}} 
+  {{!-- <script src="js/modernizr.js"></script> --}}
+  <!--endbuild -->
+</head>
+
+<body class="gutterless-grids">
+  <div class="wrap-nobg">
+    <div class="center">
+      <h2>Gutterless Grids</h2>
+      <p>Gutterless grids can be achieved in Susy by settings the <code>gutters</code> setting to 0 in the Susy map</p>
+    </div>
+  </div>
+
+  <div class="wrap-gutterless"> 
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h2>Gutterless on the fly</h2>
+      <p>You can always change the gutters of the Susy grid on the fly easily by passing a (gutters:0) map locally in the <code>span()</code> mixin, or the <code>with-layout()</code> mixin</p>
+
+      <p>Alternatively, you can use the Susy shorthand to set gutters to zero (You'll need to set the columns as well if you use the shorthand).</p>
+    </div>
+  </div>
+
+  <div class="wrap"></div>
+
+  {{> foot}}

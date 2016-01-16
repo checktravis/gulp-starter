@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Susy Templates - Stick Sidebar</title>
+  <!-- build:css css/sticky-sidebar.min.css -->
+  <link rel="stylesheet" href="css/sticky-sidebar.css">
+  <!-- endbuild -->
+
+  <!--build:headjs js/head.min.js -->
+
+  <!--endbuild -->
+</head>
+
+<body class="sticky-sidebar">
+  <div class="wrap">
+    <div class="content">
+      <h2>Sticky Sidebar</h2>
+      <p>Sticky elements, or elements with the <code>position: fixed</code> property require a different treatment if you want to keep to the proportion Susy created.</p>
+  
+      <p>This is because the context of these elements are different; A fixed-positioned element has its context relative to the browser width while a normal element has its context relative to the parent width.</p>
+
+      <p>We have to make the context of fiex the same for both types of elements and we can do so using a fixed-positioned wrapper.</p>
+
+      <p>We also want to give a z-index to elements that are covered up by this fixed-position wrapper. </p>
+
+      <p>Once this fixed-positioned wrapper is in place, we can continue to use Susy like we normally would. </p>
+    </div>
+
+    <div class="wrap--fixed">
+      <div class="sidebar sidebar--fixed">
+        <h2>Sidebar</h2>
+        <div class="widget"> </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  {{foot}}

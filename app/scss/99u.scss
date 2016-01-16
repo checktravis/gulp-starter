@@ -1,0 +1,101 @@
+@import "scaffold";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+
+
+$susy:(
+  output: isolate,
+  gutter-position: inside, 
+  columns: 1,
+  container: 980px,
+  gutters: 0.2,
+  global-box-sizing: border-box,
+  debug: (image: show-columns)
+  );
+
+$bp-med: 600px;
+$bp-large: 960px;
+
+$contexts: (
+  layout-top: (
+    medium: 1.6 1,
+    large: 2.4 1.6 1
+    )
+  );
+
+$layout-top-map: (
+  gutter: 0.25
+  );
+
+$layout-gallery-map: (
+  gutter: 0.25
+  );
+
+// Containers
+// ----------
+
+.l-wrap-top {
+  @include with-layout($layout-top-map) {
+    @include container; 
+    @include bp-with-context($bp-med, layout-top, medium) {
+      @include show-grid;
+    }
+    @include bp-with-context($bp-large, layout-top, large) {
+      @include show-grid;
+    }
+  }  
+}
+
+.l-wrap-gallery {
+  @include with-layout($layout-gallery-map) {
+    @include container;
+  }
+}
+
+
+// Layout Top
+@include with-layout($layout-top-map) {
+  .l-wrap-top > div {
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: none;
+    }
+
+    @include bp-with-context($bp-med, layout-top, medium) {
+      &:first-child {
+        @include span(1 first);
+      }
+
+      &:nth-child(2) {
+        display: block;
+        @include span(1 last);
+      }
+    }
+
+    @include bp-with-context($bp-large, layout-top, large) {
+      &:first-child {
+        @include span(1 first nest);
+      }
+
+      &:nth-child(2) {
+        @include span(1 at 2 nest);
+      }
+
+      &:nth-child(3) {
+        display: block;
+        @include span(1 last nest);
+      }
+    }
+  }
+}
+
+// Layout Gallery

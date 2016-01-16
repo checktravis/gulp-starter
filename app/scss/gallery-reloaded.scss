@@ -1,0 +1,111 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px, 
+  columns: 12, 
+  gutters: 0.5, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+// Susy Layouts
+// ------------
+
+.wrap {
+  @include container;
+}
+
+// Method 1
+.gallery--1 {
+  @include cf;
+  .gallery__item {
+    @include gallery(3);
+    height: 0;
+    margin-top: gutter();
+    padding-bottom: span(3);
+    // -n + <number> selects the first <number> child. We have 4 columns in a row.
+    &:nth-child(-n + 4) {
+      margin-top: 0;
+    }
+  }
+}
+
+// Method 2
+.gallery--2 {
+  @include cf;
+  .gallery__item {
+    @include gallery(3);
+    height: 0;
+    margin-bottom: gutter();
+    padding-bottom: span(3);
+    // <number> is the number of elements in a row. We have 4. 
+    // ~ selects every selector after the selected child. We want to target the rest of the 3 items. 
+    // If .gallery-reloaded__item is placed on the root level, we can use &:nth-last-child(4) ~ & {} instead.
+    &:nth-last-child(4),
+    &:nth-last-child(4) ~ .gallery__item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Gallery Reloaded
+.gallery-reloaded--1 {
+  @include cf;
+  .gallery-reloaded__item {
+    @include gallery-reloaded(3);
+    height: 0;
+    margin-top: gutter();
+    padding-bottom: span(3);
+  }
+}
+
+.gallery-reloaded--2 {
+  @include cf;
+  .gallery-reloaded__item {
+    @include gallery-reloaded(3, bottom gallery-reloaded__item);
+    height: 0;
+    margin-bottom: gutter();
+    padding-bottom: span(3);
+  }
+}
+
+// Method 2 With Gallery Reloaded
+.gallery-reloaded--responsive {
+  @include cf;
+  .gallery-reloaded__item {
+    @include gallery-reloaded(4);
+    height: 0;
+    margin-top: gutter();
+    padding-bottom: span(4);
+    @include susy-breakpoint(960px, 15) {
+      @include gallery-reloaded(3);
+      margin-top: gutter();
+      padding-bottom: span(3);
+    }
+  }
+}
+
+.wrap--gallery-reloaded {
+  @extend .wrap;
+  @include susy-breakpoint(960px, 15) {
+    @include show-grid;
+  }
+}
+
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.gallery__item,
+.gallery-reloaded__item {
+  &:nth-child(odd) {
+    background: color(shamrock);
+  }
+  &:nth-child(even) {
+    background: color(jungle-green);
+  }
+}

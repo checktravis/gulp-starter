@@ -1,0 +1,13 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px,
+  columns: 1 2.618, 
+  output: isolate,
+  global-box-sizing: border-box,
+  debug: (image: show)
+  );
+
+.wrap {
+  @include container;
+}

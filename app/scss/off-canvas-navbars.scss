@@ -1,0 +1,118 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px, 
+  columns: 12, 
+  gutters: 0.5, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+$bp: 960px;
+$navbar-width: rhythm(12);
+
+.wrap {
+  @include container;
+  padding-left: rhythm(1);
+  padding-right: rhythm(1);
+}
+
+html,
+body,
+.c-canvas,
+.c-canvas__off-canvas-container,
+.c-canvas__on-canvas-container {
+  height: 100%;
+}
+
+.c-canvas {
+  position: relative;
+  overflow: hidden;
+}
+
+.c-canvas__off-canvas-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: $navbar-width;
+  overflow: auto;
+  background: color(havelock-blue);
+}
+
+.c-canvas__on-canvas-container {
+  position: relative;
+  z-index: 20;
+  overflow: auto;
+  background: white;
+  @include trans-prep;
+  transition: transform 0.5s ease;
+
+  .c-canvas.is-open & {
+    overflow: hidden;
+    transform: translate3d($navbar-width, 0, 0);
+  }
+}
+
+
+// Header Nav
+// ----------
+
+.c-header-nav {
+  display: none;
+
+  @include bp($bp) {
+    display: block;
+  }
+}
+
+.c-header-nav__toggle {
+  display: block;
+
+  @include bp($bp) {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: block;
+
+  @include bp($bp) {
+    display: none;
+  }
+}
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.l-site-header {
+  background: color(shamrock);
+}
+
+nav a {
+  display: block;
+  padding: rhythm(0.25) rhythm(0.5);
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background: color(jungle-green);
+  }
+
+  @include bp(960px) {
+    display: inline-block;
+    padding: rhythm(1) rhythm(0.5);
+
+    &:first-child {
+      margin-left: rhythm(-0.5);
+    }
+  }
+}
+
+.wrap {
+  margin-top: 0;
+  margin-bottom: 0;
+}
