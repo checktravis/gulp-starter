@@ -35,3 +35,4 @@ Run the following command to compile to the `dist` folder
 ~~~
 gulp build
 ~~~
+# gulp-starter
