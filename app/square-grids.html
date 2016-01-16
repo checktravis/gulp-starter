@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Susy Templates - Square Grids</title>
+  <!-- build:css css/square-grids.min.css -->
+  <link rel="stylesheet" href="css/square-grids.css">
+  <!-- endbuild -->
+
+  <!--build:headjs js/head.min.js -->
+   
+  <!--endbuild -->
+</head>
+
+<body class="square-grids">
+<div class="wrap-nobg">
+    <div class="center">
+      <h2>Square Grids</h2>
+      <p>Square grids are made by setting these 3 properties on the list item: </p>
+      <ol>
+        <li>Height of list item = 0</li>
+        <li>padding bottom of list item = width of list item. (You can get it by setting the same span value)</li>
+        <li>Gutter equals to gutter of context (For consistent white space)</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="square-gallery">
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+      <li class="square-gallery__item"> </li>
+    </ul>
+  </div>
+
+  <!--build:js js/foot.min.js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
+  <script src="js/off-canvas-navbars.js"></script>
+  <script src="js/masonry.js"></script>
+  <!-- endbuild -->
+  
+  </body>
+  
+  </html>

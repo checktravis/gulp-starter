@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Susy Templates - Self Adjusting Galleries</title>
+  <!-- build:css css/self-adjusting-galleries.min.css -->
+  <link rel="stylesheet" href="css/self-adjusting-galleries.css">
+  <!-- endbuild -->
+
+  <!--build:headjs js/head.min.js -->
+
+  <!--endbuild -->
+</head>
+
+<body class="self-adjusting-galleries">
+  <div class="wrap-nobg">
+    <div class="center">
+      <h2>Self Adjusting Galleries</h2>
+      <p>When working with galleries, we run into problems when we can't control the exact number of gallery items. That's the biggest problem when working with galleries. Sometimes we end up with ugly grids like this :(</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="gallery">
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+    </ul>
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <p><strong>That sucks.</strong> One of the ways we can fix this is to make sure the last few items are spread out evenly to cover the full width. We can do so with some selector-jitsu mastery and some complex double loops (see code).</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="gallery--adjusted">
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+      <li class="gallery__item"></li>
+    </ul>
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>Gallery Reloaded to the rescue!</h3>
+      <p>Gallery reloaded takes in a boolean in the second argument in addition to what we discussed in <a href="#gallery-reloaded.html">gallery reloaded.</a>
+      </p>
+
+      <p>
+        <pre><code>.gallery__item {
+  @include gallery-reloaded(3, bottom gallery__item true);
+}</code></pre>
+      </p>
+
+      <p>Gallery Reloaded also manages to pacify other variations in the grid, as long as the total columns is divisible by the number of stray items. </p>
+
+      <h3>One Extra Item</h3>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="self-adjusting-galleries">
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+    </ul>
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>2 Extra Items</h3>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="self-adjusting-galleries">
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+    </ul>
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>3 Extra Items</h3>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="self-adjusting-galleries">
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+    </ul>
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>No Extra Items</h3>
+      <p>This works perfectly fine if you had a normal gallery as well!</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="self-adjusting-galleries">
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+      <li class="self-adjusting-galleries__item"></li>
+    </ul>
+  </div>
+
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <p>Have fun with this! (Just don't use it with asymmetric grids)</p>
+    </div>
+  </div>
+
+  {{foot}}

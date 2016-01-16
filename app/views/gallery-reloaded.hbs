@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Susy Templates - Gallery Reloaded</title>
+  <!-- build:css css/gallery-reloaded.min.css -->
+  <link rel="stylesheet" href="css/gallery-reloaded.css">
+  <!-- endbuild -->
+
+  <!--build:headjs js/head.min.js -->
+
+  <!--endbuild -->
+</head>
+
+<body class="gallery-reloaded">
+  <div class="wrap-nobg">
+    <div class="center">
+      <h2>Galleries...</h2>
+      <p> Noticed how there always seem to be a margin bottom on every grid item whenever we use the <code>gallery()</code> mixin? </p>
+      <p>Err.. well that's because we kept using <code>margin-bottom</code> to provide our galleries with an even gutter.</p>
+      <p>There are two ways to remove that. Here's how.</p>
+    </div>
+  </div>
+
+  <!-- Method 1 -->
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>Method 1: </h3>
+      <p>With method 1, we use <code>margin-top</code> instead of <code>margin-bottom</code> and set the first row of items to <code>margin-top: 0</code>.</p>
+
+      <p>We can accomplish this with the nth-child selector (<code>:nth-child</code>). This requires some selector-jutsu where you can find in the code.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="gallery--1">
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+    </ul>
+  </div>
+  <!-- End Method 1 -->
+
+  <!-- Method 2 -->
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>Method 2: </h3>
+      <p>With method 2, we continue to set a gutter <code>margin-bottom</code> and select the last row of the gallery to give it a <code>margin-bottom: 0</code>.</p>
+
+      <p>We can accomplish this with a combination of the nth-last-child selector (<code>:nth-last-child</code>) and the general sibling selector (<code>~</code>).</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="gallery--2">
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+      <li class="gallery__item"> </li>
+    </ul>
+  </div>
+  <!-- End Method 2 --> 
+
+  <!-- Gallery Reloaded -->
+  <div class="wrap-nobg">
+    <div class="center">
+      <h2>Gallery Reloaded</h2>
+      <p>It can be a pain in the ass to remove the top and bottom margins when you're building a responsive gallery. Why not leverage on the <code>gallery()</code> mixin since it has the number of columns already? 
+
+      <p>Which is why here's a <code>gallery-reloadad()</code>mixin that takes in a second parameter. This second parameter can either be <code> top</code> or <code>bottom</code>. If bottom is used, make sure to add the selector for the gallery that is being used to it as well. </p>
+
+      <p>Check the code for examples.</p>
+    </div>
+  </div>
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>Top</h3>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="gallery-reloaded--1">
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+    </ul>
+  </div> 
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <h3>Bottom</h3>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="gallery-reloaded--2">
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+    </ul>
+  </div> 
+
+  <div class="wrap-nobg">
+    <div class="center">
+      <p>The good this is both methods allow you to do responsive galleries without counting nth-childs! Here's how to work with the <code> top </code> one. </p>
+      <h2>Gallery Reloaded Responsive</h2>
+    </div>
+  </div>
+  
+  <div class="wrap--gallery-reloaded">
+    <ul class="gallery-reloaded--responsive">
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+      <li class="gallery-reloaded__item"> </li>
+    </ul>
+  </div> 
+
+  {{> foot}}

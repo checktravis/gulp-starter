@@ -1,0 +1,50 @@
+.wrap-nobg {
+  @extend .wrap;
+  background: none;
+}
+
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+.center {
+  width: 75%;
+  max-width: rhythm(20);
+  margin-left: auto;
+  margin-right: auto;
+
+  ol > li {
+    list-style-type: decimal;
+  }
+}
+
+.wrap {
+  margin-top: rhythm(3);
+  margin-bottom: rhythm(3);
+}
+
+.overlay {
+  background: transparentize(#fff, 0.3);
+  margin: rhythm(1);
+  padding: rhythm(1);
+}
+
+h2 {
+  margin-top: rhythm(1.5);
+  margin-bottom: rhythm(0.5);
+}
+
+h2 + p,
+h3 + p {
+  margin-top: rhythm(0.5);
+}
+
+p + p {
+  margin-top: rhythm(1);
+}
+
+p + h3 {
+  margin-top: rhythm(1);
+}

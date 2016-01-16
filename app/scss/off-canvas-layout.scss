@@ -1,0 +1,101 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px,
+  columns: 12,
+  gutters: 0.5,
+  global-box-sizing: border-box,
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+$bp: 960px;
+$off-canvas-width: span(6);
+
+// Layouts
+// -------
+
+.wrap {
+  @include container;
+  padding-left: rhythm(1);
+  padding-right: rhythm(1);
+}
+
+.wrap--half {
+  @include container((columns: 6));
+  padding-left: rhythm(1);
+  padding-right: rhythm(1);
+}
+
+// Off Canvas Setup
+// ----------------
+
+html,
+body,
+.c-canvas,
+.c-canvas__off-canvas-container,
+.c-canvas__on-canvas-container {
+  height: 100%;
+}
+
+.c-canvas {
+  position: relative;
+  overflow: hidden;
+}
+
+.c-canvas__off-canvas-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: $off-canvas-width;
+  overflow: auto;
+  background: color(havelock-blue);
+}
+
+.c-canvas__on-canvas-container {
+  position: relative;
+  z-index: 20;
+  overflow: auto;
+  background: white;
+  @include trans-prep;
+  transition: transform 0.5s ease;
+
+  .c-canvas.is-open & {
+    overflow: hidden;
+    transform: translate3d($off-canvas-width, 0, 0);
+  }
+}
+
+// Off Canvas Content
+// ------------------
+
+@include with-layout((columns: 6)) {
+  .gallery {
+    @include cf;
+    margin-top: -1 * gutter();
+    padding-top: rhythm(3);
+  }
+
+  .gallery__item {
+    @include gallery(2);
+    height: 0;
+    margin-top: gutter();
+    padding-bottom: span(2);
+    background: color(jungle-green);
+  }
+}
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.l-site-header {
+  background: color(shamrock);
+}
+
+.wrap {
+  margin-top: 0;
+  margin-bottom: 0;
+}

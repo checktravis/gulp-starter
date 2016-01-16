@@ -1,0 +1,59 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px, 
+  columns: 12, 
+  gutters: 0.5, 
+  gutter-position: float, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+// Susy Layouts
+// ------------
+// NOTE: Gutter-position: inside is used because we have to use a margin-left: -4px to combat whitespace between inline block elements. 
+
+.wrap {
+  @include container;
+}
+
+.wrap--fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  @include container;
+}
+
+// Float Center
+
+.content {
+  @include span(8);
+  position: relative;
+  z-index: 20;
+}
+
+.sidebar {
+  @include span(4 last);
+}
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.content {
+  background: transparentize(color(porcelain),0.15);
+  height: 200vh;
+  padding: rhythm(1)
+}
+
+.sidebar {
+  background: color(shamrock);
+}
+
+.widget {
+  background: color(curious-blue);
+  height: rhythm(6);
+}

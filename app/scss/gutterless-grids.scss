@@ -1,0 +1,45 @@
+@import "scaffold";
+@import "demo";
+
+$susy: (
+  columns: 6, 
+  gutters: 0, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+.wrap-gutterless {
+  @include container;
+}
+
+// Gutterless
+// ------------
+
+// Gutterless on the fly
+// ---------------------
+
+// Reset Gutters
+@include layout((gutters: 0.25)); 
+
+.wrap {
+  @include with-layout((gutters:0)) {
+    @include container;        
+  }
+}
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.wrap,
+.wrap-gutterless {
+  height: 6rem;
+}
+
+.wrap-nobg {
+  height: auto;
+}
+

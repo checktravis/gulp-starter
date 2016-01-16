@@ -1,0 +1,56 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px, 
+  columns: 12, 
+  gutters: 0.5, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+.wrap {
+  @include container;
+}
+
+// Masonry Layout
+// --------------
+
+// Sets masonry column size
+.masonry__column {
+  width: span(3);
+}
+
+// Sets masonry gutter size
+.masonry__gutter {
+  width: gutter();
+}
+
+.masonry__item {
+  // Masonry item with. This is required to determine individual item width
+  width: span(3);
+  margin-top: gutter();
+}
+
+
+// For demo purposes
+// -----------------
+@import "demo";
+
+.masonry__item {
+  &:nth-child(3n+1) {
+    height: rhythm(12);
+    background: color(jungle-green);
+  }
+
+  &:nth-child(3n+2) {
+    height: rhythm(4);
+    background: color(curious-blue);
+  }
+
+  &:nth-child(3n+3) {
+    height: rhythm(8);
+    background: color(persian-red);
+  }
+}

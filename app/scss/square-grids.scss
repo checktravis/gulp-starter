@@ -1,0 +1,44 @@
+@import "scaffold";
+
+$susy: (
+  container: 1140px, 
+  columns: 12, 
+  gutters: 0.5, 
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+// Susy Layouts
+// ------------
+
+.wrap {
+  @include container;
+}
+
+.square-gallery {
+  @include cf;
+}
+
+.square-gallery__item {
+  @include gallery(3);
+  height: 0;
+  margin-bottom: gutter();
+  padding-bottom: span(3);
+}
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.square-gallery__item {
+  &:nth-child(odd) {
+    background: color(shamrock);
+  }
+
+  &:nth-child(even) {
+    background: color(jungle-green);
+  }
+}

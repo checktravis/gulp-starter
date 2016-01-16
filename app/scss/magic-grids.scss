@@ -1,0 +1,39 @@
+@import "scaffold";
+
+$susy: (
+  columns: 6, 
+  gutters: 0.25, 
+  column-width: 80px,
+  global-box-sizing: border-box, 
+  debug: (image: show-columns)
+  );
+
+@include border-box-sizing;
+
+$bp-med: span(8 static);
+$med: 12;
+
+.wrap {
+  @include container;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include susy-breakpoint($bp-med, $med) {
+    @include show-grid;
+    max-width: container();
+  }
+}
+
+
+// For Demo Purposes
+// -----------------
+
+@import "demo";
+
+.wrap {
+  height: 6rem;
+}
+
+.wrap-nobg {
+  height: auto;
+}
